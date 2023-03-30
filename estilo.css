@@ -1,0 +1,242 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&family=Quicksand&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(#b4c8f3, #f7f5f5);
+	/* font-weight: bold; */
+	letter-spacing: 2px;
+	font-family: 'Phudu', cursive;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.main {
+	background-color: rgb(250, 210, 233);
+	height: 90%;
+	width: 90%;
+	margin-top: 30px;
+
+}
+
+.col1 {
+	background-color: rgb(270, 175, 175);
+	color: #080707;
+
+}
+
+.titulo {
+	padding: 10px;
+	font-size: 17px;
+
+}
+.subtitulo {
+	padding: 10px;
+	font-size: 15px;
+}
+
+h3 {
+	padding: 10px;
+	font-size: 18 px;
+}
+
+p,
+li {
+	padding: 5px;
+	font-size: 15px;
+}
+
+.profile-img {
+	height: 180px;
+	width: 180px;
+	background-color: #ddd;
+	border-radius: 50%;
+	margin: 25px;
+	border: 10px solid #f086d0;
+	box-shadow: 6px 7px 9px 5px #880c631e;
+}
+
+.profile-img img {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.lista li {
+	list-style: none;
+	padding: 10px;
+}
+
+.p1 {
+	display: none;
+}
+
+.botones {
+	background-color: rgb(233, 20, 137);
+	color: white;
+	padding: 5px;
+	font-size: 10px;
+}
+
+.p2 {
+	display: none;
+}
+
+.mostrar {
+	display: block;
+}
+
+.col2 {
+	background-color: hsl(0, 3%, 94%);
+	color: black;
+	padding: 20px;
+	margin: 5px;
+	font-size: 20px;
+}
+
+.col2 p {
+	text-align: justify;
+}
+
+.col2 li {
+	list-style: none;
+}
+
+/* RESPONSIVE GRID MAYOR A 768PX (WEB)*/
+
+.main {
+
+	max-width: 1024px;
+	/*ancho máximo de la página*/
+	/*auto permite centrar nuestra página en forma horizontal*/
+	display: grid;
+	gap: 4px;
+	/*nos ahorramos tenes que poner márgenes entre los elementos*/
+
+	grid-template-columns: repeat(3, 1fr);
+
+	grid-template-rows: repeat(3, auto);
+
+	grid-template-areas: "contacto datos datos"
+		"contacto datos datos"
+		"contacto datos datos"
+
+}
+
+.main .col1 {
+	grid-area: contacto;
+}
+
+.main .col2 {
+	grid-area: datos;
+}
+
+
+/* RESPONSIVE GRID (TABLET)*/
+
+@media screen and (max-width: 768px) {
+	.main {
+		
+		grid-template-columns: repeat(3, 1fr);
+
+		grid-template-rows: repeat(5, auto);
+
+		grid-template-areas: "contacto contacto contacto"
+			"contacto contacto contacto"
+			"datos datos datos"
+			"datos datos datos"
+			"datos datos datos"
+
+	}
+
+	.main .col1 {
+		grid-area: contacto;
+		display: flex;
+		height: auto;
+		justify-content: start;
+
+	}
+
+	.lista {
+		padding-left: 10px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.lista li {
+		font-size: 12px;
+		font-weight: bold;
+	}
+	.titulo {
+		margin-top: 20px;
+		padding-left: 25px;
+		font-size: 25px;
+	}
+	.subtitulo {
+		margin-top: 45px;
+		padding-left: 30px;
+		display: flex;
+	}
+
+	.profile-img {
+		margin-top: 60px;
+		margin-left: 30px;
+		height: 140px;
+		width: 140px;
+	}
+	.main .col2 {
+		grid-area: datos;
+	}
+}
+
+/* RESPONSIVE GRID DE (CELULAR)*/
+
+@media screen and (max-width: 480px) {
+	.main {
+		
+		grid-template-columns: repeat(3, 1fr);
+
+		grid-template-rows: repeat(5, auto);
+
+		grid-template-areas: "contacto contacto contacto"
+			"contacto contacto contacto"
+			"datos datos datos"
+			"datos datos datos"
+			"datos datos datos"
+
+	}
+
+
+	.profile-img {
+		
+		height: 100px;
+		width: 100px;
+		margin-top: 15px;
+		grid-area: foto;
+		display: none;
+	}
+	.titulo {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 30px;
+	
+	}
+	.subtitulo {
+		display: none;
+	}
+	.main .col1 {
+		grid-area: contacto;
+		display: flex;
+	}
+	.main .col2 {
+		grid-area: datos;
+	}
+}
+
